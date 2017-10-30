@@ -1,0 +1,50 @@
+﻿@model Childcare.Models.Child
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Child</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.childname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.childname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.childdob)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.childdob)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.childaddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.childaddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.childgender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.childgender)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.childid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

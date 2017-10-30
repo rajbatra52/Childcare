@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Childcare.Models.Guardian>
+
+@{
+    ViewBag.Title = "Index";
+    var relationship = "";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.guardianname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.guardianrelationship)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.guardianage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.guardianaddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.guardiangender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.guardianmobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.guardianphone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.guardianemergencycontact)
+        </th>
+        <th>@Html.ActionLink("Create New", "Create", null, new { @style = "color:red" }))</th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.guardianname)
+        </td>
+        <td>
+            @{
+                if (item.guardianrelationship.Equals("M"))
+                {
+                    relationship = "Mother";
+                }
+                else
+                if (item.guardianrelationship.Equals("F"))
+                {
+                    relationship = "Father";
+                }
+             }
+            @relationship @*Html.Display not required*@
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.guardianage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.guardianaddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.guardiangender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.guardianmobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.guardianphone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.guardianemergencycontact)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.guardianid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.guardianid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.guardianid })
+        </td>
+    </tr>
+}
+
+</table>

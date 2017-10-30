@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "MyView";
+    //Layout = "~/Views/Shared/_myLayoutPage.cshtml";
+}
+
+<h2>MyView</h2>
+<form>
+    <table align="center" border="1">
+        <caption style="color:red; font-size:16px">Course Form</caption>
+        <tr>
+        <td>CourseId:</td>
+        <td><input type="text" /></td>
+        </tr>
+
+        <tr>
+            <td>Course Name:</td>
+            <td><input type="text" /></td>
+        </tr>
+
+        <tr>
+            <td>Course Duration:</td>
+            <td><input type="text" /></td>
+        </tr>
+
+        <tr>
+           
+            <td colspan="2"><input type="submit"value="Submit" /></td>
+        </tr>
+    </table>
+</form>
+@section mysection1{
+        <p>
+            This is my first section.
+        </p>
+    }
+
+@section mysection2{
+    <p>
+        This is my second section.
+    </p>
+}
+<p>@ViewBag.Message</p>
+

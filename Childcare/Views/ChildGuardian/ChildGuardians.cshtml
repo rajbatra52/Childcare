@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Childcare.Models.ChildGuardian>
+
+@{
+    ViewBag.Title = "List of Child Guardians";
+}
+
+<table class="table">
+    <caption style="color:red; font-size:18px;height:40px">List of Child Guardians</caption>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.childid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Child.childname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.guardianid)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Guardian.guardianname)
+        </th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.childid)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Child.childname)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.guardianid)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Guardian.guardianname)
+            </td>
+
+
+
+        </tr>
+    }
+</table>
+
+

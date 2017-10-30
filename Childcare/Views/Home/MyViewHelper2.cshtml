@@ -1,0 +1,36 @@
+﻿@model Childcare.Models.Child
+@{
+
+    ViewBag.Title = "MyViewHelper";
+}
+
+<h2>MyViewHelper</h2>
+@using (Html.BeginForm("Action", "ControllerName", FormMethod.Post))
+{
+    <table align="center" border="1">
+        <caption style="color:red; font-size:16px">Course Form</caption>
+        <tr>
+            <td>Child Id:</td>
+            <td>@Html.TextBoxFor(m => m.childid, null, new { @class = "form-control" })</td>
+        </tr>
+
+        <tr>
+            <td>Child Name:</td>
+
+            <td>@Html.TextBoxFor(m => m.childname, null, new { @class = "form-control" })</td>
+        </tr>
+
+        <tr>
+            <td>Child DOB:</td>
+
+            <td>@Html.TextBoxFor(m => m.childdob, null, new { @class = "form-control" })</td>
+        </tr>
+
+        <tr>
+
+            <td colspan="2"><input type="submit" value="Submit" /></td>
+        </tr>
+
+    </table>
+    <p>@ViewBag.Message</p>
+}

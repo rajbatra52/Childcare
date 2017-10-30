@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Childcare.Models.Child>
+
+@{
+    ViewBag.Title = "List of Children";
+    var ctr = 0;
+}
+
+<table class="table">
+    <caption style="color:red; font-size:18px;height:40px">List of Children</caption>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.childid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.childname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.childdob)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.childaddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.childgender)
+        </th>
+        <th>@Html.ActionLink("Create Child", "Create", null, new { @style = "color:red; font-size:16px" })</th>
+    </tr>
+
+@foreach (var item in Model)
+{
+
+    if (item.childdob > DateTime.Parse("2014-10-01"))
+    {
+        <tr>
+        <td>          
+        <span style="color:red">@Html.DisplayFor(modelItem => item.childid)</span>                   
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.childname)
+        </td>
+        <td>
+           @Html.DisplayFor(modelItem => item.childdob)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.childaddress)
+        </td>
+        <td>
+
+            @Html.DisplayFor(modelItem => item.childgender)
+        </td>
+        <td>
+            @Html.ActionLink("Update", "Edit", new { id = item.childid }) |
+            @Html.ActionLink("Details", "Details", new { id = item.childid }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.childid })
+        </td>
+    </tr>
+        ctr++;
+    }
+
+}
+    <tr style="color:red; font-size:16px"><td>Total number of Children = @ctr </td></tr>
+</table>

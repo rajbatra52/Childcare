@@ -1,0 +1,82 @@
+﻿@model Childcare.Models.Guardian
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Guardian</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.guardianname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.guardianname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.guardianrelationship)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.guardianrelationship)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.guardianage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.guardianage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.guardianaddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.guardianaddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.guardiangender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.guardiangender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.guardianmobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.guardianmobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.guardianphone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.guardianphone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.guardianemergencycontact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.guardianemergencycontact)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.guardianid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Childcare.Models.Enrollment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of Enrollments</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Child.childid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Child.childname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.enrollmentdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.enrollmentfrom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.enrollmentto)
+        </th>
+        <th>
+            @Html.ActionLink("Create Enrollment", "Create", null, new { @style = "color:red" })
+        </th>)
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Child.childid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Child.childname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.enrollmentdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.enrollmentfrom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.enrollmentto)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.enrollmentid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.enrollmentid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.enrollmentid })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,50 @@
+﻿@model Childcare.Models.Enrollment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Enrollment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Child.childname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Child.childname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.enrollmentdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.enrollmentdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.enrollmentfrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.enrollmentfrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.enrollmentto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.enrollmentto)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.enrollmentid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
